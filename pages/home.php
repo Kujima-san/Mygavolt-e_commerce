@@ -1,1 +1,7 @@
-<h1>Je suis la home page</h1>
+<?php
+
+
+
+$data = $db->query('SELECT * FROM articles') ;
+var_dump($data) ;
+
