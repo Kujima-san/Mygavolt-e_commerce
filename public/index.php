@@ -13,7 +13,12 @@ if (isset($_GET['p'])){
 
 
 
-if($p === 'home'){
+ob_start();
+if ($p === 'home'){
     require '../pages/home.php' ;
+}elseif ($p === 'catalogue') {
+    require '../pages/catalogue.php' ;
 }
 
+$content = ob_get_clean();
+require '../pages/templates/default.php' ;
