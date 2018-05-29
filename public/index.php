@@ -1,7 +1,17 @@
 <?
 
-// Permet d'appeler générer la class autoloader
+// Permet de gérer l'autoloader
 require '../app/Autoloader.php' ;
 App\Autoloader::register() ;
 
-var_dump('salut le monde') ;
+
+if(isset($_GET['p'])){
+    $p = $_GET['p'] ;
+}else{
+    $p = 'home' ;
+}
+
+
+if ($p === 'home'){
+    require '../pages/home.php' ;
+}
